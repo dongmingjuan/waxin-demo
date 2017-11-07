@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    URL：<%= weixin_engine.weixin_server_url(Site.first.weixin_secret_key) %>
+Token：<%= Site.first.weixin_token %>
+    <%= yield %>
+  </body>
+</html>
